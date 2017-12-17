@@ -1,0 +1,222 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+kbd {
+    display: inline-block;
+    padding: 2px 4px;
+    margin: 0 1px;
+    background: #ccc;
+    border: 1px solid #555;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #fff inset, 1px 1px 1px #aaa;
+}
+
+.options,
+.instructions {
+    vertical-align: top;
+}
+
+.cube {
+    margin: 0 auto;
+}
+
+.face {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+#face-u,
+#face-l,
+#face-r,
+#face-d {
+    pointer-events: none;
+}
+
+#face-u .tiles {
+    transform-origin: 50% 100%;
+    transform: rotateX(70deg);
+}
+
+#face-d .tiles {
+    transform-origin: 50% 0;
+    transform: rotateX(-70deg);
+}
+
+#face-l .tiles {
+    transform-origin: 100% 50%;
+    transform: rotateY(-70deg);
+}
+
+#face-r .tiles {
+    transform-origin: 0 50%;
+    transform: rotateY(70deg);
+}
+
+.tile {
+    border: 3px solid #000;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    transition: box-shadow 0.2s ease;
+}
+
+.face button,
+.rotate {
+    position: absolute;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+@supports(width: 10vmin) {
+    .tile {
+        border-radius: 1vmin;
+        width: 10vmin;
+        height: 10vmin;
+    }
+
+    .face button,
+    .rotate {
+        font-size: 2.5vmin;
+        line-height: 2.5vmin;
+        width: 5vmin;
+        height: 5vmin;
+    }
+}
+
+#btnLr,
+#btnCu,
+#btnR {
+    left: 25%;
+    bottom: 250%;
+}
+
+#btnL,
+#btnCd,
+#btnRr {
+    left: 25%;
+    top: 250%;
+}
+
+#btnU,
+#btnCl,
+#btnDr {
+    top: 25%;
+    right: 250%;
+}
+
+#btnUr,
+#btnCr,
+#btnD {
+    top: 25%;
+    left: 250%;
+}
+
+#btnCubeUp {
+    left: 25%;
+    bottom: 320%
+}
+
+#btnCubeDown {
+    left: 25%;
+    top: 320%
+}
+
+#btnCubeLeft {
+    top: 25%;
+    right: 320%
+}
+
+#btnCubeRight {
+    top: 25%;
+    left: 320%
+}
+
+#btnFr {
+    right: 0;
+    bottom: 0;
+}
+
+#btnF {
+    left: 0;
+    bottom: 0;
+}
+
+#btnB {
+    right: 70px;
+    bottom: 70px;
+}
+
+#btnBr {
+    left: 70px;
+    bottom: 70px;
+}
+
+@supports(bottom: 7vmin) {
+    #btnB {
+        right: 7vmin;
+        bottom: 7vmin;
+    }
+    
+    #btnBr {
+        left: 7vmin;
+        bottom: 7vmin;
+    }
+}
+
+.c1 {
+    background-color: #f00;
+}
+
+.c2 {
+    background-color: #0f0;
+}
+
+.c3 {
+    background-color: #00f;
+}
+
+.c4 {
+    background-color: #fff;
+}
+
+.c5 {
+    background-color: #ff0;
+}
+
+.c6 {
+    background-color: #f80;
+}
+
+[data-selected-row="0"] #face-l tr:nth-child(1) .tile,
+[data-selected-row="0"] #face-f tr:nth-child(1) .tile,
+[data-selected-row="0"] #face-r tr:nth-child(1) .tile,
+[data-selected-row="1"] #face-l tr:nth-child(2) .tile,
+[data-selected-row="1"] #face-f tr:nth-child(2) .tile,
+[data-selected-row="1"] #face-r tr:nth-child(2) .tile,
+[data-selected-row="2"] #face-l tr:nth-child(3) .tile,
+[data-selected-row="2"] #face-f tr:nth-child(3) .tile,
+[data-selected-row="2"] #face-r tr:nth-child(3) .tile,
+[data-selected-column="0"] #face-u .tile:nth-child(1),
+[data-selected-column="0"] #face-f .tile:nth-child(1),
+[data-selected-column="0"] #face-d .tile:nth-child(1),
+[data-selected-column="1"] #face-u .tile:nth-child(2),
+[data-selected-column="1"] #face-f .tile:nth-child(2),
+[data-selected-column="1"] #face-d .tile:nth-child(2),
+[data-selected-column="2"] #face-u .tile:nth-child(3),
+[data-selected-column="2"] #face-f .tile:nth-child(3),
+[data-selected-column="2"] #face-d .tile:nth-child(3) {
+    box-shadow:  0 0 5px 10px #0ff inset;
+}

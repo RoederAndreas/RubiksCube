@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Rubik's Cube</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <table class="cube">
+            <tbody>
+                <tr>
+                    <td>
+                        <button class="rotate" id="btnFr" tabindex="1">&#8630;</button>
+                        <button class="rotate" id="btnB" tabindex="3">&#8630;</button>
+                    </td>
+                    <td class="face" id="face-u">
+                        <table class="tiles">
+                            <tbody>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <button class="rotate" id="btnF" tabindex="2">&#8631;</button>
+                        <button class="rotate" id="btnBr" tabindex="4">&#8631;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="face" id="face-l">
+                        <table class="tiles">
+                            <tbody>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="face" id="face-f">
+                        <table class="tiles">
+                            <tbody>
+                                <tr>
+                                    <td class="tile">
+                                        <button id="btnU" tabindex="9">&#8592;</button>
+                                        <button id="btnLr" tabindex="5">&#8593;</button>
+                                    </td>
+                                    <td class="tile">
+                                        <button id="btnCu" tabindex="6">&#8593;</button>
+                                        <button id="btnCubeUp" tabindex="8">&#9650;</button>
+                                    </td>
+                                    <td class="tile">
+                                        <button id="btnR" tabindex="7">&#8593;</button>
+                                        <button id="btnUr" tabindex="13">&#8594;</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tile">
+                                        <button id="btnCl" tabindex="10">&#8592;</button>
+                                        <button id="btnCubeLeft" tabindex="12">&#9664;</button>
+                                    </td>
+                                    <td class="tile"></td>
+                                    <td class="tile">
+                                        <button id="btnCr" tabindex="14">&#8594;</button>
+                                        <button id="btnCubeRight" tabindex="16">&#9654;</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tile">
+                                        <button id="btnDr" tabindex="11">&#8592;</button>
+                                        <button id="btnL" tabindex="17">&#8595;</button>
+                                    </td>
+                                    <td class="tile">
+                                        <button id="btnCd" tabindex="18">&#8595;</button>
+                                        <button id="btnCubeDown" tabindex="20">&#9660;</button>
+                                    </td>
+                                    <td class="tile">
+                                        <button id="btnRr" tabindex="19">&#8595;</button>
+                                        <button id="btnD" tabindex="15">&#8594;</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="face" id="face-r">
+                        <table class="tiles">
+                            <tbody>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="options">
+                        <button id="btnScramble">Scramble</button>
+                        <button id="btnReset">Reset</button>
+                    </td>
+                    <td class="face" id="face-d">
+                        <table class="tiles">
+                            <tbody>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                    <td class="tile"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="instructions">
+                        <p><kbd>W</kbd><kbd>S</kbd>: Select row</p>
+                        <p><kbd>A</kbd><kbd>D</kbd>: Select column</p>
+                        <p><kbd>&#8593;</kbd><kbd>&#8595;</kbd>: Move selected column</p>
+                        <p><kbd>&#8592;</kbd><kbd>&#8594;</kbd>: Move selected row</p>
+                        <p><kbd>Shift</kbd> + <kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8592;</kbd><kbd>&#8594;</kbd>: Rotate Cube</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
